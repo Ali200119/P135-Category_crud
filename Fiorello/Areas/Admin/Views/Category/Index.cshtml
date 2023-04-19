@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Category>
+
+@{
+    ViewBag.Title = "Category";
+}
+
+<div style="width: 70%; margin-left: 40px">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>Test</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
