@@ -18,9 +18,14 @@ namespace Fiorello.Services
 
 
 
-        public async Task<Expert> GetAll()
+        public async Task<IEnumerable<Expert>> GetAll()
         {
-            return await _context.Experts.Include(e => e.Persons).FirstOrDefaultAsync();
+            return await _context.Experts.Include(e => e.Persons).ToListAsync();
+        }
+
+        public async Task<Expert> GetById(int? id)
+        {
+            return await _context.Experts.Include(e => e.Persons).FirstOrDefaultAsync(e => e.Id == id);
         }
     }
 }

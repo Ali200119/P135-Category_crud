@@ -5,6 +5,7 @@ namespace Fiorello.Services.Interfaces
 {
 	public interface IExpertService
 	{
-		Task<Expert> GetAll();
+		Task<IEnumerable<Expert>> GetAll();
+		Task<Expert> GetById(int? id);
 	}
 }

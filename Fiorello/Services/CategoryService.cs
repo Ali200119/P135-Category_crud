@@ -19,5 +19,7 @@ namespace Fiorello.Services
 
 
         public async Task<IEnumerable<Category>> GetAll() => await _context.Categories.ToListAsync();
+
+        public async Task<Category> GetById(int? id) => await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
     }
 }
